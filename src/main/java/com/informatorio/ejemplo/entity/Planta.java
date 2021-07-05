@@ -1,5 +1,6 @@
 package com.informatorio.ejemplo.entity;
 import com.informatorio.ejemplo.entity.Persona;
+<<<<<<< HEAD
 
 import java.util.Calendar;
 import java.util.Objects;
@@ -24,6 +25,27 @@ public class Planta extends Persona{
     }
 
     public Calendar getFecha_Inic(){
+=======
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+
+@Entity
+@PrimaryKeyJoinColumn(name="PersonaId")
+public class Planta extends Persona{
+
+    private String fecha_inic; //Luego será Date
+    private String puesto;
+    private String monto; //Luego será BigDecimal
+
+
+    public void setFecha_Inic(String fecha){
+        this.fecha_inic = fecha;
+    }
+
+    public String getFecha_Inic(){
+>>>>>>> 8a1e0ab4b66d64916a2bab07b78a100a5960ed15
         return fecha_inic;
     }
 
@@ -35,12 +57,21 @@ public class Planta extends Persona{
         return puesto;
     }
 
+<<<<<<< HEAD
     public void setMonto(double monto_por_mes){
         this.monto_por_mes = monto_por_mes;
     }
 
     public double getMonto(){
         return monto_por_mes;
+=======
+    public void setMonto(String monto){
+        this.monto = monto;
+    }
+
+    public String getMonto(){
+        return monto;
+>>>>>>> 8a1e0ab4b66d64916a2bab07b78a100a5960ed15
     }
 
 }
