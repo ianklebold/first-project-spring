@@ -1,7 +1,7 @@
-com/informatorio/ejemplo/controller/PersonaController.class
-com/informatorio/ejemplo/entity/Planta.class
 com/informatorio/ejemplo/repository/PlantaRepository.class
 com/informatorio/ejemplo/controller/PlantaController.class
 com/informatorio/ejemplo/entity/Persona.class
 com/informatorio/ejemplo/EjemploApplication.class
 com/informatorio/ejemplo/repository/EmpleadoRepository.class
+com/informatorio/ejemplo/controller/PersonaController.class
+com/informatorio/ejemplo/entity/Planta.class

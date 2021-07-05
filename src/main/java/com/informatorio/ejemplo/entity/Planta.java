@@ -1,24 +1,29 @@
 package com.informatorio.ejemplo.entity;
 import com.informatorio.ejemplo.entity.Persona;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 
+import java.util.Calendar;
+import java.util.Objects;
+import javax.persistence.*;
 @Entity
-@PrimaryKeyJoinColumn(name="PersonaId")
+@PrimaryKeyJoinColumn(name="planta_id")
 public class Planta extends Persona{
 
-    private String fecha_inic; //Luego será Date
+    @Column(name = "fecha_inic", updatable = false, nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Calendar fecha_inic; //Luego será Date
+
+    @Column(name = "puesto", nullable = false, length = 150)
     private String puesto;
-    private String monto; //Luego será BigDecimal
+
+    @Column(name = "monto_por_mes", nullable = false, scale = 2)
+    private double monto_por_mes; //Luego será BigDecimal
 
 
-    public void setFecha_Inic(String fecha){
-        this.fecha_inic = fecha;
+    public void setFecha_Inic(Calendar fecha_inic){
+        this.fecha_inic = fecha_inic;
     }
 
-    public String getFecha_Inic(){
+    public Calendar getFecha_Inic(){
         return fecha_inic;
     }
 
@@ -30,12 +35,12 @@ public class Planta extends Persona{
         return puesto;
     }
 
-    public void setMonto(String monto){
-        this.monto = monto;
+    public void setMonto(double monto_por_mes){
+        this.monto_por_mes = monto_por_mes;
     }
 
-    public String getMonto(){
-        return monto;
+    public double getMonto(){
+        return monto_por_mes;
     }
 
 }
